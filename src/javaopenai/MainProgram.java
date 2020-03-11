@@ -7,15 +7,10 @@ package javaopenai;
 
 /**
  *
- * @author elcezerilab
+ * @author BAP1
  */
-public class JavaOpenAI {
-
-    /**
-     * @param args the command line arguments
-     */
+public class MainProgram {
     public static void main(String[] args) {
-        // TODO code application logic here
+        new VacuumCleaner().runApplet(new MainProgram());
     }
-    
 }
