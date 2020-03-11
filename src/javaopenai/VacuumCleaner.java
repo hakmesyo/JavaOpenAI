@@ -54,7 +54,6 @@ public class VacuumCleaner extends PApplet {
 
         //agent.randomWalk();
         agent.swipeHorizontal();
-
     }
 
 }
@@ -66,6 +65,9 @@ class Agent {
     int rx = 50, px = rx / 2, py = rx / 2;
     String location = "A";
     int delay=5;
+    int dx = 5;
+    int dy = 0;
+
 
     public Agent(VacuumCleaner refx) {
         ref = refx;
@@ -88,36 +90,6 @@ class Agent {
             ref.lstGarbage.remove(lst_detected.get(i));
         }
     }
-
-//    public void randomWalk() {
-//        int delta = 50;
-//        if (System.currentTimeMillis() - prev > 100) {
-//            prev = System.currentTimeMillis();
-//            clearGarbage();
-//            int dx = (int) (-delta / 2 + Math.random() * delta);
-//            int dy = (int) (-delta / 2 + Math.random() * delta);
-//            if (location.equals("A")
-//                    && px + dx < ref.width / 2
-//                    && px + dx > 0
-//                    && py + dy < ref.height
-//                    && px + dy > 0) {
-//                px += dx;
-//                py += dy;
-//            }
-//            if (location.equals("B")
-//                    && px + dx < ref.width
-//                    && px + dx > ref.width / 2
-//                    && py + dy < ref.height
-//                    && px + dy > 0) {
-//                px += dx;
-//                py += dy;
-//            }
-//        }
-//        draw();
-//    }
-    int count = 0;
-    int dx = 5;
-    int dy = 0;
 
     public void swipeHorizontal() {
         if (System.currentTimeMillis() - prev > delay) {
@@ -205,4 +177,31 @@ class Garbage {
             refx.lstGarbage.add(new Garbage());
         }
     }
+    
+//    public void randomWalk() {
+//        int delta = 50;
+//        if (System.currentTimeMillis() - prev > 100) {
+//            prev = System.currentTimeMillis();
+//            clearGarbage();
+//            int dx = (int) (-delta / 2 + Math.random() * delta);
+//            int dy = (int) (-delta / 2 + Math.random() * delta);
+//            if (location.equals("A")
+//                    && px + dx < ref.width / 2
+//                    && px + dx > 0
+//                    && py + dy < ref.height
+//                    && px + dy > 0) {
+//                px += dx;
+//                py += dy;
+//            }
+//            if (location.equals("B")
+//                    && px + dx < ref.width
+//                    && px + dx > ref.width / 2
+//                    && py + dy < ref.height
+//                    && px + dy > 0) {
+//                px += dx;
+//                py += dy;
+//            }
+//        }
+//        draw();
+//    }
 }
